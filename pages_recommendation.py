@@ -2,7 +2,7 @@ import json
 
 # Function to load JSON data from a file
 def load_data(filename):
-    with open(user_data.json, "r") as file:
+    with open(cleaned_data.json, "r") as file:
         return json.load(file)
 
 # Function to find pages a user might like based on common interests
@@ -31,7 +31,7 @@ def find_pages_you_might_like(user_id, data):
     return [page_id for page_id, _ in sorted_pages]
 
 # Load data
-data = load_data("user_data.json")
+data = load_data("cleaned_data.json")
 user_id = 1  # Example: Finding recommendations for Amit
 page_recommendations = find_pages_you_might_like(user_id, data)
 print(f"Pages You Might Like for User {user_id}: {page_recommendations}")
